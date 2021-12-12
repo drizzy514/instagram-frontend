@@ -19,7 +19,7 @@ const Posts = ({ posts, loading }) => {
       {posts.map(element => (
         <li key={element.post_id} className='list-group-item'>
           <br></br>
-                                        <img src={`http://blog-siteuz.herokuapp.com/public/${element.post_img}` } height="100" with="100"/>
+                                        <img src={`/public/${element.post_img}` } height="100" with="100"/>
                                         <h3 className="video-photographer">{element.post_title}</h3>
                                         <p>{element.post_text}</p>
                                         <button onSubmit={deletePosst}>Delete post</button>
