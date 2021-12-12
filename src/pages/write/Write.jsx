@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import "./write.css";
 import axios from "axios";
 import Header from "../../components/header/Header";
@@ -7,19 +7,16 @@ export default function Write() {
   const [title, setTitle] = useState("");
   const [text, setDesc] = useState("");
   const [poster, setFile] = useState(null);
-  console.log(poster)
   const handleSubmit = async (e) => {
     e.preventDefault();
    
    
     try {
       const data =new FormData();
-      const postername = Date.now() + poster.name;
       data.append("title", title);
       data.append("text", text)
       data.append("poster", poster);
-      const res = await axios.post("https://blog-siteuz.herokuapp.com/createpost", data ).then((res) => {
-        console.log(res.data)
+      await axios.post("https://blog-siteuz.herokuapp.com/createpost", data ).then((res) => {
         window.location.replace("/public/" + res.data.post_img);
       });
     } catch (err) {}
