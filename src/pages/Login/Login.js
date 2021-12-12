@@ -1,4 +1,4 @@
-import {  useEffect, useState } from "react";
+import {  useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
@@ -12,7 +12,7 @@ function Login () {
         e.preventDefault();
             if(user) {
               try {
-                const res = await axios.post("https://blog-siteuz.herokuapp.com/login", {
+                await axios.post("https://blog-siteuz.herokuapp.com/login", {
                   password,
                   username
                 }).then(res => res.json()).then(data => {
