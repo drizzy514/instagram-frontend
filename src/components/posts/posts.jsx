@@ -17,7 +17,6 @@ const Posts = ({ posts, loading }) => {
   return (
     <ul className='list-group mb-4'>
       {posts.map(element => (
-          (console.log(element)),
         <li key={element.post_id} className='list-group-item'>
           <br></br>
                                         <img src={`https://blog-siteuz.herokuapp.com/public/${element.post_img}` } height="100" with="100"/>
